@@ -23,9 +23,10 @@
 
   // Initialize the bookmarklet
   function init() {
+    console.log('🔧 Init function called');
     // Check if already initialized
     if (window.__aiFloatInitialized) {
-      console.log('AI Float already initialized');
+      console.log('⚠️ AI Float already initialized');
       return;
     }
 
@@ -34,6 +35,7 @@
 
     // Mark as initialized
     window.__aiFloatInitialized = true;
+    console.log('✅ AI Float initialized successfully');
 
     // Create the floating ball
     createFloatingBall();
@@ -41,12 +43,14 @@
     // Add event listeners
     document.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('selectionchange', handleSelectionChange);
+    console.log('👂 Event listeners added');
 
     // Set auto-load flag
     try {
       localStorage.setItem('aiFloatAutoLoad', 'true');
+      console.log('💾 Auto-load flag set to true');
     } catch (e) {
-      console.log('Could not set auto-load flag');
+      console.log('⚠️ Could not set auto-load flag');
     }
   }
 
@@ -96,14 +100,17 @@
   function handleMouseUp(e) {
     cursorX = e.clientX;
     cursorY = e.clientY;
+    console.log('🖱️ Mouse up at:', cursorX, cursorY);
 
     // Small delay to let selection settle
     setTimeout(() => {
       const selection = window.getSelection();
       const text = selection.toString().trim();
+      console.log('📝 Selected text:', text.length, 'chars');
 
       if (text.length > 0) {
         selectedText = text;
+        console.log('✨ Showing ball...');
         showBall();
       } else {
         hideBall();
@@ -431,15 +438,21 @@
     window.__aiFloatInitialized = false;
   }
 
-  // Auto-initialize if activated before or first time
+  // Auto-initialize ALWAYS (force initialization on load)
+  console.log('🚀 AI Float script loaded!');
   try {
     const autoLoad = localStorage.getItem('aiFloatAutoLoad');
+    console.log('📍 Auto-load setting:', autoLoad);
     // Auto-load if it was activated before (or never set, meaning first activation)
     if (autoLoad !== 'false') {
+      console.log('✅ Initializing AI Float...');
       init();
+    } else {
+      console.log('⏸️ AI Float is deactivated. Click bookmark to activate.');
     }
   } catch (e) {
     // If localStorage fails, initialize anyway
+    console.log('⚠️ localStorage error, initializing anyway');
     init();
   }
 
