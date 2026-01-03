@@ -1,0 +1,76 @@
+🎯 AI ASSISTANT BOOKMARKLET - FINAL VERSION
+==========================================
+
+📋 COPY THIS URL AND SAVE AS A BOOKMARK:
+-----------------------------------------
+
+javascript:(function(){if(window.__aiFloatInitialized){window.__aiFloatToggle();return;}var s=document.createElement('script');s.src='http://localhost:8000/bookmarklet.js?t='+Date.now();document.body.appendChild(s);})();
+
+
+🚀 HOW TO USE:
+--------------
+
+1. CREATE THE BOOKMARK:
+   - Copy the URL above (the entire javascript: line)
+   - Create a new bookmark in your browser
+   - Paste the URL as the bookmark's address/URL
+   - Name it "AI Assistant" or whatever you like
+
+2. ACTIVATE IT ONCE:
+   ✨ Click the bookmark ONCE on any webpage
+   ✅ The AI assistant is now PERMANENTLY ACTIVE
+   🔄 It will automatically work on ALL pages from now on
+   📍 Even after closing browser or refreshing pages!
+
+3. USING THE ASSISTANT:
+   - Select any text on any webpage
+   - A ✨ floating ball appears automatically
+   - Click the ball to open the chat panel
+   - Ask questions about the selected text
+   - Drag the panel anywhere by clicking the header
+
+4. TO DEACTIVATE (ONLY IF YOU WANT TO TURN IT OFF):
+   - Click the bookmark again to TURN OFF
+   - It will stay OFF until you click again to reactivate
+   - You only need to deactivate if you want to stop using it
+
+
+⚙️ REQUIREMENTS:
+----------------
+- Node.js proxy server must be running on port 3000
+- Bookmarklet server must be running on port 8000
+
+To start servers:
+  cd ai-proxy
+  node server.js        (in one terminal)
+  
+  cd .. (back to project root)
+  python -m http.server 8000   (in another terminal)
+
+
+💡 KEY FEATURES:
+----------------
+✅ ONE-TIME ACTIVATION: Click once, works forever
+🔄 AUTO-LOADS: Automatically active on every page
+💾 PERSISTENT: Remembers your activation across sessions
+📍 ALWAYS READY: Just select text and it appears
+🎯 NO RE-CLICKING: No need to activate on each page
+
+
+🎨 CURRENT DESIGN:
+-----------------
+- Ultra-minimal dark theme with dim white accents
+- 24px floating ball size
+- Subtle borders and ghost-like appearance
+- Smooth drag functionality
+- Dim white overlay for better visibility
+
+
+📝 HOW IT WORKS:
+----------------
+1. First click: Activates and saves preference to localStorage
+2. Every new page: Automatically checks and loads if activated
+3. Click again: Only if you want to deactivate
+4. Stays OFF: Until you manually click to reactivate
+
+This means you activate it ONCE and it works everywhere until you decide to turn it off!

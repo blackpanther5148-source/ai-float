@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Float Assistant - Test Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px 0;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 6px;
+            border-radius: 4px;
+            color: #856404;
+            font-weight: 600;
+        }
+        .instructions {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        .instructions h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .instructions ol {
+            margin: 10px 0;
+        }
+        .instructions li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ AI Float Assistant</h1>
+        <p class="subtitle">Test your AI-powered text selection assistant</p>
+
+        <div class="instructions">
+            <h3>🚀 Quick Start</h3>
+            <ol>
+                <li>Click the button below to activate the assistant</li>
+                <li><span class="highlight">Select any text</span> on this page</li>
+                <li>The floating ✨ ball will appear near your selection</li>
+                <li>Click the ball to open the chat panel</li>
+                <li>Ask questions about the selected text!</li>
+            </ol>
+        </div>
+
+        <button onclick="loadBookmarklet()">🎈 Activate AI Assistant</button>
+
+        <div class="section">
+            <h2>Sample Text 1: Technology</h2>
+            <p>
+                <strong>Artificial Intelligence</strong> is revolutionizing how we interact with technology. 
+                Machine learning algorithms can now process vast amounts of data to identify patterns, 
+                make predictions, and even generate creative content. Natural Language Processing (NLP) 
+                enables computers to understand and respond to human language in ways that were previously 
+                thought impossible. Deep learning networks, inspired by the human brain's neural structure, 
+                can recognize images, translate languages, and power autonomous vehicles.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Sample Text 2: Science</h2>
+            <p>
+                <strong>Quantum mechanics</strong> is a fundamental theory in physics that describes nature 
+                at the smallest scales of energy levels of atoms and subatomic particles. Unlike classical 
+                physics, quantum mechanics introduces phenomena such as wave-particle duality, quantum 
+                entanglement, and the uncertainty principle. These concepts challenge our everyday understanding 
+                of reality and have led to revolutionary technologies like quantum computing and quantum cryptography.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Sample Text 3: History</h2>
+            <p>
+                <strong>The Renaissance</strong> was a period in European history marking the transition from 
+                the Middle Ages to modernity, covering the 15th and 16th centuries. It was characterized by 
+                a revival of interest in classical learning and values from ancient Greece and Rome. The 
+                Renaissance saw profound developments in art, architecture, politics, science, and literature. 
+                Famous figures like Leonardo da Vinci, Michelangelo, and Galileo Galilei made groundbreaking 
+                contributions that continue to influence our world today.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Sample Text 4: Complex Concept</h2>
+            <p>
+                <strong>Blockchain technology</strong> is a decentralized, distributed ledger system that records 
+                transactions across multiple computers in a way that makes it nearly impossible to alter retroactively. 
+                Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data. 
+                This chain of blocks creates an immutable record that can be publicly verified without requiring 
+                a central authority. Beyond cryptocurrency applications like Bitcoin, blockchain has potential 
+                uses in supply chain management, healthcare records, voting systems, and smart contracts.
+            </p>
+        </div>
+
+        <div class="instructions">
+            <h3>💡 Try These:</h3>
+            <ul>
+                <li>Select a technical term and ask "What does this mean?"</li>
+                <li>Highlight a paragraph and ask "Summarize this"</li>
+                <li>Select a concept and ask "Explain this in simple terms"</li>
+                <li>Choose a historical topic and ask "Tell me more about this"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function loadBookmarklet() {
+            const script = document.createElement('script');
+            script.src = 'http://localhost:8000/bookmarklet.js';
+            document.body.appendChild(script);
+            
+            setTimeout(() => {
+                alert('✅ AI Assistant activated! Now select any text on this page to see the floating ball appear.');
+            }, 500);
+        }
+    </script>
+</body>
+</html>
